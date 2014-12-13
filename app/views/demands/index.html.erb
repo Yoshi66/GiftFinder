@@ -1,0 +1,41 @@
+<h1>Listing demands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Price</th>
+      <th>Purpose</th>
+      <th>Category</th>
+      <th>Describe</th>
+      <th>Other</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @demands.each do |demand| %>
+      <tr>
+        <td><%= demand.country %></td>
+        <td><%= demand.gender %></td>
+        <td><%= demand.age %></td>
+        <td><%= demand.price %></td>
+        <td><%= demand.purpose %></td>
+        <td><%= demand.category %></td>
+        <td><%= demand.describe %></td>
+        <td><%= demand.other %></td>
+        <td><%= link_to 'Leave Comments', demand %></td>
+        <%#<td><%= link_to 'Edit', edit_demand_path(demand) %></td>
+        <%#<td><%= link_to 'Destroy', demand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+ <%#<%= link_to 'New Demand', new_demand_path %>

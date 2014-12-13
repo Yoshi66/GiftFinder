@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @demand.country %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @demand.gender %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @demand.age %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @demand.price %>
+</p>
+
+<p>
+  <strong>Purpose:</strong>
+  <%= @demand.purpose %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @demand.category %>
+</p>
+
+<p>
+  <strong>Describe:</strong>
+  <%= @demand.describe %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @demand.other %>
+</p>
+
+<%= link_to 'Edit', edit_demand_path(@demand) %> |
+<%= link_to 'Back', demands_path %>
