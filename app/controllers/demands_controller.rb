@@ -1,6 +1,6 @@
 class DemandsController < ApplicationController
   before_action :set_demand, only: [:show, :edit, :update, :destroy]
-
+  before_action :signed_in_user, only:[:new]
   # GET /demands
   # GET /demands.json
   def index

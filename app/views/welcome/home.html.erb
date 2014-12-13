@@ -4,8 +4,9 @@
 <h1><%= link_to "I Need Help", new_demand_path %></h1>
 <h1><%= link_to "I Want To Help", demands_path %></h1>
 
-
-
-
-<p><%= link_to "sign in", '#' %></p>
-<p><%= link_to 'sign up', new_user_path %></p>
+<% if signed_in? %>
+  <p><%= link_to "sign out", signout_path, method: 'delete' %></p>
+  <% else %>
+  <p><%= link_to "sign in", new_session_path %></p>
+  <p><%= link_to 'sign up', new_user_path %></p>
+<% end %>
