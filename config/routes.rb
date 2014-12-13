@@ -1,4 +1,5 @@
 GiftFinder::Application.routes.draw do
+  root 'welcome#home'
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
