@@ -11,6 +11,8 @@ class DemandsController < ApplicationController
   # GET /demands/1.json
   def show
     @comment = Comment.new
+    @comments = @demand.comments
+    @output = @comments.map {|i| "comment is #{i.post} by #{i.user.name}"}
   end
 
   # GET /demands/new

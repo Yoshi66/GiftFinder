@@ -40,6 +40,12 @@
   <%= @demand.other %>
 </p>
 
+<% if !@comments.nil? %>
+  <% @output.each do |val| %>
+    <%= val %>
+  <% end %>
+<% end %>
+
 <section>
   <%= form_for([@demand, @comment]) do |f| %>
   <div class="field">
