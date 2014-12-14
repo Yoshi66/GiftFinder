@@ -1,7 +1,9 @@
 GiftFinder::Application.routes.draw do
   root 'welcome#home'
   resources :users
-  resources :demands
+  resources :demands do
+    resources :comments
+  end
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup', to: 'users#new',             via: 'get'
   match '/signin', to: 'sessions#new',           via: 'get'

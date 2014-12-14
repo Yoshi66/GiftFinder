@@ -10,6 +10,7 @@ class DemandsController < ApplicationController
   # GET /demands/1
   # GET /demands/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /demands/new

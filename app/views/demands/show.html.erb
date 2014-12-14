@@ -40,5 +40,21 @@
   <%= @demand.other %>
 </p>
 
+<section>
+  <%= form_for([@demand, @comment]) do |f| %>
+  <div class="field">
+    <%= f.text_area :post, placeholder: "Leave your comment here" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :url, placeholder: "any recommended website?" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :question, placeholder: "anything you wanna ask?" %>
+  </div>
+  <%= f.submit "post", class: 'btn btn-large btn-primary' %>
+<% end %>
+</section>
+
+
 <%= link_to 'Edit', edit_demand_path(@demand) %> |
 <%= link_to 'Back', demands_path %>
