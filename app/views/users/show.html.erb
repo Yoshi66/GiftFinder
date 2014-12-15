@@ -10,15 +10,19 @@
   <%= @user.email %>
 </p>
 
+
 <p>
-  <strong>Medal</strong>
-  <h1>Gold</h1>
-  <%= @user.medal.gold %>
-  <h1>Silver</h1>
-  <%= @user.medal.silver %>
-  <h1>Bronze</h1>
-   <%= @user.medal.bronze %>
+  <strong>Contribution:</strong>
+  <%= @user.comments.all.count %>
 </p>
+
+  <strong>Medal</strong>
+  <ul>
+    <ol>Gold:<%= @user.medal.gold %></ol>
+    <ol>Silver:<%= @user.medal.silver %></ol>
+    <ol>Bronze:<%= @user.medal.bronze %></ol>
+ </ul>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
