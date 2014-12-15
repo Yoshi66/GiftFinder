@@ -7,12 +7,30 @@ class DemandsController < ApplicationController
     @demands = Demand.all
   end
 
+
+
   # GET /demands/1
   # GET /demands/1.json
   def show
     @comment = Comment.new
     @comments = @demand.comments
     @output = @comments.map {|i| "comment is #{i.post} by "}
+
+
+    require 'open-uri'
+    require 'nokogiri'
+    html = open("http://www.amazon.com/").read
+    parsed_html = Nokogiri::HTML(html)
+    images = parsed_html.css('meta')
+    images.each do |image|
+       @url = image.attributes["content"]
+   end
+    #logger.debug images.first
+    #image = images.first.to_s.slice!("http://k.yimg.jp/images/clear.gif")
+    #logger.debug image
+    #@img = MiniMagick::Image.open('http://espnfivethirtyeight.files.wordpress.com/2014/07/transgender-banner.jpg?w=1024&h=260&crop=1')
+    #logger.debug @img
+    #http://stackoverflow.com/questions/15487198/display-data-scraped-from-nokogiri-in-rails
   end
 
   # GET /demands/new
