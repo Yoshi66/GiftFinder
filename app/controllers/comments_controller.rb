@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:sacces] = "Thank you for your help"
-      redirect_to demands_path
+      redirect_to @demand
     else
       redirect_to root_path
     end
