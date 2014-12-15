@@ -40,9 +40,19 @@
   <%= @demand.other %>
 </p>
 
+
+
 <% if !@comments.nil? %>
-  <% @output.each do |val| %>
+  <% @output.each_with_index do |val, i| %>
     <%= val %>
+    <%# how to chose the second one out of instance variable. It wasn't find() where() %>
+    <%= link_to @comments.first.user.name, '#' %>
+    <%#<%= @comments.find_by_followed_id(i).map {|a| a.user.name} %>
+    <ul>
+      <li><%= link_to 'gold', demand_add_one_path(@demand, id: @demand.id, sort: "gold") %></li>
+      <li><%= link_to 'silver', demand_add_one_path(@demand, id: @demand.id, sort: "silver") %></li>
+      <li><%= link_to 'bronze', demand_add_one_path(@demand, id: @demand.id, sort: "bronze") %></li>
+    </ul>
   <% end %>
 <% end %>
 

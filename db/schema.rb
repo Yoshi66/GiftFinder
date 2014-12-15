@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213231921) do
+ActiveRecord::Schema.define(version: 20141215023012) do
 
   create_table "comments", force: true do |t|
     t.string   "post"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20141213231921) do
     t.string   "category"
     t.text     "describe"
     t.text     "other"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "medals", force: true do |t|
+    t.integer  "gold",       default: 0
+    t.integer  "silver",     default: 0
+    t.integer  "bronze",     default: 0
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

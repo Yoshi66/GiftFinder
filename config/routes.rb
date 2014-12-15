@@ -4,6 +4,7 @@ GiftFinder::Application.routes.draw do
   resources :demands do
     resources :comments
   end
+  match '/demand/add_one', to: 'demands#add_one',   via: 'get'
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup', to: 'users#new',             via: 'get'
   match '/signin', to: 'sessions#new',           via: 'get'

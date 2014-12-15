@@ -10,5 +10,15 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Medal</strong>
+  <h1>Gold</h1>
+  <%= @user.medal.gold %>
+  <h1>Silver</h1>
+  <%= @user.medal.silver %>
+  <h1>Bronze</h1>
+   <%= @user.medal.bronze %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

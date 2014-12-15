@@ -12,7 +12,7 @@ class DemandsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @demand.comments
-    @output = @comments.map {|i| "comment is #{i.post} by #{i.user.name}"}
+    @output = @comments.map {|i| "comment is #{i.post} by "}
   end
 
   # GET /demands/new
@@ -62,6 +62,22 @@ class DemandsController < ApplicationController
       format.html { redirect_to demands_url }
       format.json { head :no_content }
     end
+  end
+
+  def add_one
+    @medal = current_user.medal
+    case params[:sort]
+    when "gold"
+      @medal.gold += 1
+    when params[:sort] = "silver"
+      @medal.silver += 1
+    when params[:sort] = "bronze"
+      @medal.bronze += 1
+    end
+    @demand = Demand.find(params[:id])
+    @medal.save
+    flash[:notice] = "thank you for your reviewing!"
+    redirect_to @demand
   end
 
   private

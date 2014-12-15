@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :demands, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_one :medal, dependent: :destroy
   validates :name, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX},
