@@ -59,6 +59,7 @@
   <% end %>
 <% end %>
 
+<% if @user.user_type = 'retailer'%>
 <section>
   <%= form_for([@demand, @comment]) do |f| %>
   <div class="field">
@@ -73,6 +74,8 @@
   <%= f.submit "post", class: 'btn btn-large btn-primary', remote: true %>
 <% end %>
 </section>
+<% end%>
+
 
 
 <%= link_to 'Edit', edit_demand_path(@demand) %> |

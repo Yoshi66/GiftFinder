@@ -13,7 +13,7 @@
   <h1>Don't forget to add country and states</h1>
   <div class="field">
     <%= f.label :user_type %><br>
-    <%= f.text_field :user_type %>
+    <%= f.select :user_type, [['please select an option',nil],'customer','retailer']%>
   </div>
   <div class="field">
     <%= f.label :name %><br>

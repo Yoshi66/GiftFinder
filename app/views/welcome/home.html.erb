@@ -1,7 +1,5 @@
 <h>Welcome to Gift Support!</h>
 <% if signed_in? %>
-  <h1><%= link_to "I Need Help", new_demand_path %></h1>
-  <h1><%= link_to "I Want To Help", demands_path %></h1>
   <p><%= link_to "sign out", signout_path, method: 'delete' %></p>
 <% else %>
   <p><%= link_to "sign in", new_session_path %></p>

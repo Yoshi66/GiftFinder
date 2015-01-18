@@ -1,5 +1,23 @@
 <h1>Listing demands</h1>
 
+<ol>
+  <li>
+    <%= link_to "List od demand", demands_path%>
+  </li>
+  <li>
+    <%= link_to "List of reccomendation", '#'%>
+  </li>
+  <li>
+    <% if @user.user_type == 'customer'%>
+      <%= link_to "consult with retailers", new_demand_path%>
+    <% else %>
+      <%= link_to 'support customers', demands_path%>
+    <% end %>
+  </li>
+</ol>
+
+
+
 <table>
   <thead>
     <tr>
@@ -37,5 +55,7 @@
 </table>
 
 <br>
+<p><%= link_to "sign out", signout_path, method: 'delete' %></p>
+
 
  <%#<%= link_to 'New Demand', new_demand_path %>
