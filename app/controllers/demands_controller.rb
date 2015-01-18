@@ -4,6 +4,7 @@ class DemandsController < ApplicationController
   # GET /demands
   # GET /demands.json
   def index
+    @user = User.find(current_user)
     @demands = Demand.all
   end
 
@@ -12,6 +13,7 @@ class DemandsController < ApplicationController
   # GET /demands/1
   # GET /demands/1.json
   def show
+    @user = User.find(current_user)
     @comment = Comment.new
     @comments = @demand.comments
     @output = @comments.map {|i| "comment is #{i.post} by "}
