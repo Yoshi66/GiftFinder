@@ -1,6 +1,10 @@
 GiftFinder::Application.routes.draw do
   root 'welcome#home'
-  resources :users
+  resources :users do
+    collection do
+      get :subregion_options
+    end
+  end
   resources :demands do
     resources :comments
   end
