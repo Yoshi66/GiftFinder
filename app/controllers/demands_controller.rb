@@ -25,8 +25,9 @@ class DemandsController < ApplicationController
     parsed_html = Nokogiri::HTML(html)
     images = parsed_html.css('meta')
     images.each do |image|
-       @url = image.attributes["content"]
-   end
+      @url = image.attributes["content"]
+    end
+
     #logger.debug images.first
     #image = images.first.to_s.slice!("http://k.yimg.jp/images/clear.gif")
     #logger.debug image

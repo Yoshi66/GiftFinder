@@ -46,7 +46,12 @@
         <td><%= demand.category %></td>
         <td><%= demand.describe %></td>
         <td><%= demand.other %></td>
-        <td><%= link_to 'Leave Comments', demand %></td>
+        <% if @user.user_type == 'customer'%>
+           <td><%= link_to 'Look Up The Post', demand %></td>
+        <% else %>
+           <td><%= link_to 'Leave Comments', demand %></td>
+        <% end %>
+
         <%#<td><%= link_to 'Edit', edit_demand_path(demand) %></td>
         <%#<td><%= link_to 'Destroy', demand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
