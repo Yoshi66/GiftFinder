@@ -24,12 +24,8 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :country_code %><br>
-    <%= f.country_select :country_code, prompt:'Please select a country' %>
-  </div>
-  <div class="field">
-    <%= f.label :state_code %><br>
-    <%= render partial: 'subregion_select', locals: {parent_region: f.object.country_code} %>
+    <%= f.label :state %><br>
+    <%= f.select :state, options_for_select(us_states) %>
   </div>
   <div class="field">
     <%= f.label :webpage %><br>

@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.number_field :price %>
+    <%= f.select :price, options_for_select(price_range) %>
   </div>
   <div class="field">
     <%= f.label :purpose %><br>

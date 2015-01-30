@@ -1,6 +1,6 @@
 class DemandsController < ApplicationController
   before_action :set_demand, only: [:show, :edit, :update, :destroy]
-  before_action :signed_in_user, only:[:new]
+  before_action :signed_in_user
   # GET /demands
   # GET /demands.json
   def index
@@ -8,7 +8,8 @@ class DemandsController < ApplicationController
     @demands = Demand.all
   end
 
-
+  def recommend
+  end
 
   # GET /demands/1
   # GET /demands/1.json
@@ -16,17 +17,14 @@ class DemandsController < ApplicationController
     @user = User.find(current_user)
     @comment = Comment.new
     @comments = @demand.comments
-    @output = @comments.map {|i| "comment is #{i.post} by "}
-
-
-    require 'open-uri'
-    require 'nokogiri'
-    html = open("http://www.amazon.com/").read
-    parsed_html = Nokogiri::HTML(html)
-    images = parsed_html.css('meta')
-    images.each do |image|
-      @url = image.attributes["content"]
-    end
+    #require 'open-uri'
+    #require 'nokogiri'
+    #html = open("http://www.amazon.com/").read
+    #parsed_html = Nokogiri::HTML(html)
+    #images = parsed_html.css('meta')
+    #images.each do |image|
+    #  @url = image.attributes["content"]
+    #end
 
     #logger.debug images.first
     #image = images.first.to_s.slice!("http://k.yimg.jp/images/clear.gif")

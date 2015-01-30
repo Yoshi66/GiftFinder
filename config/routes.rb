@@ -1,5 +1,7 @@
 GiftFinder::Application.routes.draw do
   root 'welcome#home'
+  get 'about', to: 'welcome#about'
+  get 'help', to: 'welcome#help'
   resources :users do
     collection do
       get :subregion_options
@@ -8,6 +10,7 @@ GiftFinder::Application.routes.draw do
   resources :demands do
     resources :comments
   end
+  get 'recommend', to: 'demands#recommend', via: 'get'
   match '/demand/add_one', to: 'demands#add_one',   via: 'get'
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup', to: 'users#new',             via: 'get'

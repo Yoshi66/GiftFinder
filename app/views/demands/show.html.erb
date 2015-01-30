@@ -3,60 +3,35 @@
 <p>
   <strong>Country:</strong>
   <%= @demand.country %>
-</p>
-
-<p>
   <strong>Gender:</strong>
   <%= @demand.gender %>
-</p>
-
-<p>
   <strong>Age:</strong>
   <%= @demand.age %>
-</p>
-
-<p>
   <strong>Price:</strong>
   <%= @demand.price %>
-</p>
-
-<p>
   <strong>Purpose:</strong>
   <%= @demand.purpose %>
-</p>
-
-<p>
   <strong>Type:</strong>
   <%= @demand.category %>
-</p>
-
-<p>
   <strong>Describe:</strong>
   <%= @demand.describe %>
-</p>
-
-<p>
   <strong>Other:</strong>
   <%= @demand.other %>
 </p>
 
-<%#<%= image_tag @image %>
-<p><%= @url %></p>
-<p><%= @url %></p>
 
 <p>
 
+
 <% if !@comments.nil? %>
-  <% @output.each_with_index do |val, i| %>
-    <%= val %>
-    <%# how to chose the second one out of instance variable. It wasn't find() where() %>
-    <%= link_to @comments.first.user.name, '#' %>
+  <% @comments.each do  |i|%>
+    <p><%= i.post %> by <%= link_to i.user.name,'#' %></p>
     <%#<%= @comments.find_by_followed_id(i).map {|a| a.user.name} %>
-    <ul>
-      <li><%= link_to 'gold', demand_add_one_path(@demand, id: @demand.id, sort: "gold"), remote: true %></li>
-      <li><%= link_to 'silver', demand_add_one_path(@demand, id: @demand.id, sort: "silver") %></li>
-      <li><%= link_to 'bronze', demand_add_one_path(@demand, id: @demand.id, sort: "bronze") %></li>
-    </ul>
+    <%#<ul>
+    <%#  <li><%= link_to 'gold', demand_add_one_path(@demand, id: @demand.id, sort: "gold"), remote: true %>
+    <%#  <li><%= link_to 'silver', demand_add_one_path(@demand, id: @demand.id, sort: "silver") %>
+    <%#  <li><%= link_to 'bronze', demand_add_one_path(@demand, id: @demand.id, sort: "bronze") %>
+    <%#</ul> %>
   <% end %>
 <% end %>
 

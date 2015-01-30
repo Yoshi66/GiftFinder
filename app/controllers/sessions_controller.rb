@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
      sign_in user
      redirect_to root_path
    else
-     flash[:error] = 'Invalid email/password combination' # 誤りあり!
+     flash.now[:error] = 'Invalid email/password combination' # 誤りあり!
      render 'new'
    end
   end

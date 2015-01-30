@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118072951) do
+ActiveRecord::Schema.define(version: 20150130221139) do
 
   create_table "comments", force: true do |t|
     t.string   "post"
@@ -57,8 +57,7 @@ ActiveRecord::Schema.define(version: 20150118072951) do
     t.string   "webpage"
     t.string   "product_type"
     t.text     "description"
-    t.string   "country_code"
-    t.string   "state_code"
+    t.string   "state"
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
