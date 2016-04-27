@@ -25,7 +25,7 @@
 
 <% if !@comments.nil? %>
   <% @comments.each do  |i|%>
-    <p><%= i.post %> by <%= link_to i.user.name,'#' %></p>
+    <p><%= i.post %> by <%= link_to i.user.name, user_path(i.user.id) %></p>
     <%#<%= @comments.find_by_followed_id(i).map {|a| a.user.name} %>
     <%#<ul>
     <%#  <li><%= link_to 'gold', demand_add_one_path(@demand, id: @demand.id, sort: "gold"), remote: true %>
